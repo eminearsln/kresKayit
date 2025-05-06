@@ -4,41 +4,70 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [showSubMenu, setShowSubMenu] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleSubMenu = () => {
     setShowSubMenu(!showSubMenu);
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
-      <img className="navbar-logo" src="./src/img/logoo.png" alt="" />
+      <Link to="/">
+        <img className="navbar-logo" src="./src/img/logoo.png" alt="logo" />
+      </Link>
 
-      <ul className="navbar-menu">
+      <div className="hamburger" onClick={toggleMenu}>
+        ☰
+      </div>
+
+      <ul className={`navbar-menu ${menuOpen ? "active" : ""}`}>
         <li>
-          <Link to="/">Ana Sayfa</Link>
+          <Link to="/" onClick={closeMenu}>
+            Ana Sayfa
+          </Link>
         </li>
         <li onClick={toggleSubMenu} className="dropdown">
           Okulumuz
           <ul className={`submenu ${showSubMenu ? "active" : ""}`}>
             <li>
-              <Link to="/tarihce">Tarihçemiz</Link>
+              <Link to="/tarihce" onClick={closeMenu}>
+                Tarihçemiz
+              </Link>
             </li>
             <li>
-              <Link to="/siniflarimiz">Sınıflarımız</Link>
+              <Link to="/siniflarimiz" onClick={closeMenu}>
+                Sınıflarımız
+              </Link>
             </li>
             <li>
-              <Link to="/yemekhane">Yemekhane</Link>
+              <Link to="/yemekhane" onClick={closeMenu}>
+                Yemekhane
+              </Link>
             </li>
             <li>
-              <Link to="/misyonumuz">Misyonumuz</Link>
+              <Link to="/misyonumuz" onClick={closeMenu}>
+                Misyonumuz
+              </Link>
             </li>
           </ul>
         </li>
         <li>
-          <Link to="/kadromuz">Kadromuz</Link>
+          <Link to="/kadromuz" onClick={closeMenu}>
+            Kadromuz
+          </Link>
         </li>
         <li>
-          <Link to="/iletisim">İletişim</Link>
+          <Link to="/iletisim" onClick={closeMenu}>
+            İletişim
+          </Link>
         </li>
       </ul>
     </nav>

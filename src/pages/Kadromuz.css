@@ -3,6 +3,7 @@
   grid-template-columns: repeat(3, 1fr);
   flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 15px;
   margin-top: 50px;
@@ -42,4 +43,19 @@
 .kadro-card p {
   font-size: 14px;
   color: #777;
+}
+
+@media (max-width: 768px) {
+  .kadro-container {
+    margin: 50px auto;
+    margin-left: 90px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kadro-container {
+    grid-template-columns: 1fr;
+  }
 }

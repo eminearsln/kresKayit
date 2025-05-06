@@ -1,17 +1,21 @@
 .slider-container {
   position: relative;
+  height: 500px;
   width: 100%;
-  max-height: 500px;
-  margin-top: 40px;
+  max-width: 1200px; /* Maksimum genişlik */
+  margin: 40px auto 0 auto; /* Ortalanmış ve üstten boşluk */
+  padding: 0 15px; /* Sağ ve sol boşluk */
   overflow: hidden;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .slider-image {
-  max-width: 1300px;
   width: 100%;
+  height: 100%;
   height: auto;
   object-fit: contain;
+  border-radius: 10px; /* İsteğe bağlı, kenarları yumuşatır */
 }
 
 .dots {
@@ -36,4 +40,11 @@
 .dot.active {
   opacity: 1;
   background-color: #db6300;
+}
+
+/* Responsive için ekstra uyum */
+@media (max-width: 768px) {
+  .slider-container {
+    padding: 0 10px;
+  }
 }

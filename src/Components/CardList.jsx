@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CardList = ({ title, items }) => {
   return (
@@ -7,9 +8,16 @@ const CardList = ({ title, items }) => {
         <div className="card">
           <h3 className="card-title">{title}</h3>
           <ul>
-            {items.map((text, index) => (
+            {items.map((item, index) => (
               <li key={index}>
-                <a href="/">{text}</a>
+                {/* Eğer item.link varsa tıklanabilir yap */}
+                {item.link ? (
+                  <Link to={item.link} style={{ textDecoration: "none" }}>
+                    {item.text}
+                  </Link>
+                ) : (
+                  item.text // Eğer link yoksa metin sadece gösterilsin
+                )}
               </li>
             ))}
           </ul>
