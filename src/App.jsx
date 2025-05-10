@@ -5,8 +5,10 @@ import "./App.css";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Tarihce from "./Components/Tarihce";
+import Mission from "./Components/Mission";
 import AdminLogin from "./Components/AdminLogin";
 import VeliLogin from "./Components/VeliLogin";
+import Yemekhane from "./Components/Yemekhane";
 {
   /* VeliLogin bileşenini buraya ekleyeceğiz */
 }
@@ -28,9 +30,11 @@ function App() {
           <Route path="/kadromuz" element={<KadromuzPage />} />
           <Route path="/iletisim" element={<IletisimPage />} />
           <Route path="/tarihce" element={<Tarihce />} />
+          <Route path="/misyonumuz" element={<Mission />} />
           <Route path="/siniflarimiz" element={<Siniflarimiz />} />
           <Route path="/admin-giris" element={<AdminLogin />} />
           <Route path="/veli-giris" element={<VeliLogin />} />{" "}
+          <Route path="/yemekhane" element={<Yemekhane />} />
         </Routes>
         <Footer />
       </div>

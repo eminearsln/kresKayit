@@ -23,8 +23,8 @@ const news = [
 ];
 
 const login = [
-  { text: "Yönetici Girişi", link: "/admin-giris" }, // Yönetici girişi için link
-  { text: "Veli Girişi", link: "/veli-giris" }, // Veli girişi için link
+  { text: "Yönetici Girişi", link: "/admin-giris" },
+  { text: "Veli Girişi", link: "/veli-giris" },
 ];
 
 function HomePage() {
