@@ -35,7 +35,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li onClick={toggleSubMenu} className="dropdown">
-          Okulumuz▼
+          Okulumuz
           <ul className={`submenu ${showSubMenu ? "active" : ""}`}>
             <li>
               <Link to="/tarihce" onClick={closeMenu}>

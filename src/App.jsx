@@ -18,6 +18,7 @@ import AboutPage from "./pages/AboutPage";
 import KadromuzPage from "./pages/KadromuzPage";
 import IletisimPage from "./pages/IletisimPage";
 import Siniflarimiz from "./pages/Siniflarimiz";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
@@ -33,8 +34,9 @@ function App() {
           <Route path="/misyonumuz" element={<Mission />} />
           <Route path="/siniflarimiz" element={<Siniflarimiz />} />
           <Route path="/admin-giris" element={<AdminLogin />} />
-          <Route path="/veli-giris" element={<VeliLogin />} />{" "}
+          <Route path="/veli-giris" element={<VeliLogin />} />
           <Route path="/yemekhane" element={<Yemekhane />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
         </Routes>
         <Footer />
       </div>

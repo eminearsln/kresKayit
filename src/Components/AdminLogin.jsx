@@ -1,14 +1,25 @@
 import React, { useState } from "react";
-import "./AdminLogin.css"; // İstersen stil ayrı dosyada olsun
+import { useNavigate } from "react-router-dom";
+import "./AdminLogin.css";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Yönetici Giriş Bilgileri:", { email, password });
-    // Buraya API çağrısı veya veritabanı bağlantısı ekleyeceğiz
+
+    const adminEmail = "admin@kres.com";
+    const adminPassword = "admin123";
+
+    if (email === adminEmail && password === adminPassword) {
+      localStorage.setItem("isLoggedIn", "true");
+      navigate("/admin-dashboard");
+    } else {
+      setError("Email veya şifre hatalı.");
+    }
   };
 
   return (
@@ -31,6 +42,7 @@ const AdminLogin = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        {error && <p className="error-message">{error}</p>}
         <button type="submit">Giriş Yap</button>
       </form>
     </div>
